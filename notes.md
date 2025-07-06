@@ -1,7 +1,5 @@
 
-1. Finish basic functionality
+1. Switching between light and dark mode. 
 
-- make card container dynamic to duplicate it
-
-2. finish the server to connect to the backend
-3. create the database (use php)
+# theme switch using css root 
+- https://www.youtube.com/watch?v=_gKEUYarehE

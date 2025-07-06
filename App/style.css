@@ -39,10 +39,16 @@ body {
     display: flex;
     gap: 1rem;
     list-style: none;
+    margin-right: 30px;
 }
 .nav-links a {
     text-decoration: none;
     color: #333;
+}
+.side-components {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
 }
 .logo-image{
     height: 50px;
@@ -54,12 +60,11 @@ body {
     width: 50px;
     padding: 0;
     border-radius: 50%;
-    background-color: var(--base-variant);
+    background-color: var(--base-color);
     display: flex;
     justify-content: center;
     align-items: center;
-    top: 20px;
-    right: 20px;
+    border: none;
 }   
 #theme-switch svg{
     fill: var(--primary-color);
