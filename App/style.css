@@ -26,14 +26,16 @@ body {
     background-color: var(--base-color);
     color: var(--text-color);
 }
+.header-container {
+    padding: 10px;
+    box-shadow: 0 2px 0 rgba(20, 5, 5, 0.438);
+}
 .navbar {
+    width: 100%;
     display: flex;
-    margin: 0 auto;
     justify-content: space-between;
     align-items: center;
     background: var(--base-color);
-    box-shadow: 0 2px 0 rgba(20, 5, 5, 0.438);
-    padding: 1rem;
 }
 .nav-links {
     display: flex;
