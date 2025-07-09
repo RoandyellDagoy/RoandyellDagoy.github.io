@@ -18,3 +18,10 @@ themeSwitch.addEventListener("click", () =>{
     darkmode !== "active" ? enableDarkmode() : disableDarkmode()
 })
 
+
+const toggleBtn = document.getElementById("hamburger");
+const navLinks = document.getElementById("nav-links");
+
+toggleBtn.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
+})
