@@ -104,20 +104,73 @@ body {
 .darkmode #theme-switch svg:last-child{
     display: block;
 }
+
+
+.main-container {
+    padding: 1rem 2rem;
+}
 .aboutMe{
-    padding: 2rem;
-}
-img{
     display: flex;
-    width: 150px;
+    flex-direction: column;
+    background-color: var(--base-color);
+    margin: auto;
+    padding: 1rem;
+    gap: 4rem;
 }
+.main-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.title {
+    font-size: 2.5rem;
+    font-weight: 500;
+}
+.content {
+    color: var(--text-color);
+    font-weight: 200;
+    margin-bottom: 1rem;
+}
+.action-btns {
+    display: flex;
+    gap: 1rem;
+}
+.action-btns button {
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    padding: 1rem 2rem;
+    outline: none;
+    border: 2px solid var(--primary-color);
+    border-radius: 10px;
+    transition: .3s;
+    cursor: pointer;
+}
+.hire-me {
+    background-color: var(--primary-color);
+    color: #ffffff;
+}
+.hire-me:hover{
+    background-color: var(--accent-color);
+}
+.profile{
+    display: grid;
+    place-items: center;
+}
+.profile img {
+    width: min(25rem , 90%);
+    border-radius: 100%;
+}
+
+
+
 @media (min-width: 768px){
     .menu {
     display: none;
   }
   .nav-links {
     display: flex;
-    margin-left: 700px;
+    margin-left: 900px;
     position: static;
     flex-direction: row;
     background: none;
@@ -140,5 +193,17 @@ img{
   .containerBtn {
     order: 1;
     gap: 0.75rem;
+  }
+  .aboutMe {
+    flex-direction: row;
+    padding: 10rem 1rem 5rem 1rem;
+    text-align: center;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .profile {
+    grid-area: 1/1/2/2;
+  }
+  .action-btns {
+    margin: auto;
   }
 }
