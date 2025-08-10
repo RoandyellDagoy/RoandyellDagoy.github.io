@@ -75,9 +75,20 @@ button {
     text-decoration: none;
 }
 .navbar .theme-switch {
-    border-style: none;
-    background: none;
-    border: nones;
+  border: none;
+  background: none;
+}
+.navbar .theme-switch svg {
+  fill: var(--primary-color);
+}
+.navbar .theme-switch svg:last-child {
+  display: none;
+}
+.darkmode #theme-switch svg:first-child{
+  display: none;
+}
+.darkmode #theme-switch svg:last-child {
+  display: block;
 }
 .navbar .hamburger {
   display: none;
@@ -259,6 +270,7 @@ button {
 
 
 @media screen and (max-width: 900px) {
+      /* navbar responsiveness */
   .navbar {
     display: flex;
   }
@@ -278,5 +290,18 @@ button {
    .navbar .hamburger svg {
     fill: var(--text-color);
     background: none;
+   }
+
+   /* hero section responsiveness */
+
+   .hero-section {
+    flex-direction: column;
+    padding: 30px 5%;
+   }
+   .hero-text h1 , p, .socials{
+    text-align: center;
+   }
+   .hero-text .stack-icons {
+    justify-content: center;
    }
 }
