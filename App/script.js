@@ -18,6 +18,22 @@ themeSwitch.addEventListener("click", () =>{
     darkmode !== "active" ? enableDarkmode() : disableDarkmode()
 })
 
+
+        // moved directly to section everytime a button is clicked
+
+document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', e => {
+        e.preventDefault();
+        const target = document.querySelector(link.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Close mobile menu after click
+        document.getElementById('nav-links').classList.remove('show');
+    });
+});
+
 const toggleBtn = document.getElementById("hamburger");
 const navLinks = document.getElementById("nav-links");
 
