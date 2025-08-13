@@ -117,6 +117,7 @@ button {
   justify-content: center;
   padding: 5rem 2rem;
   gap: 2rem;
+  margin: 35px 0;
 }
 .hero-text {
     max-width: 500px;
@@ -156,7 +157,6 @@ button {
   border-radius: 50%;
   overflow: hidden;
   margin-top: 2rem;
-  
 }
 .profile-img img {
   width: 100%;
@@ -169,14 +169,6 @@ button {
 
 
                             /* about section design */
-.about-section{
-    display: flex;
-    scroll-margin-top: 80px;
-    background-color: var(--base-color);
-    justify-content: center;
-    align-items: center;
-    text-align: left;
-}
 .about-content {
     display: flex;
     padding: 5rem 12rem;
@@ -191,6 +183,7 @@ button {
 }
 .about-content .about-text {
   padding: 10px 3px;
+  gap: 10px;
 }
 .about-content .about-text h4{
   color: var(--secondary-text);
@@ -333,16 +326,13 @@ button {
   main {
     overflow-x: hidden;
   }
-  
+
       /* navbar responsiveness */
-  .navbar {
-    position: absolute;
-  }
   .navbar .nav-right .nav-menu{
     display: none;
   }
   .navbar .nav-right {
-    gap: 20px;
+    gap: 1.5rem;
     margin-right: 2px;
   }
   .navbar .hamburger{
@@ -361,6 +351,8 @@ button {
             /* hero section responsiveness */
    .hero-section {
     flex-direction: column-reverse;
+    margin: 5% 2%;
+    padding: 10% 5%;
    }
    .hero-section .description {
     font-size: medium;
@@ -370,28 +362,28 @@ button {
    }
    .stack-icons {
     margin-bottom: 0;
+    align-items: center;
    }
    .stack-icons img{
-    width: 40px;
+    width: 15%;
+   }
+   .profile-img{
+    width: 300px;
+    height: 300px;
    }
    
         /* ABOUT SECTION RESPONSIVENESSS */
-   .about-content {
-    flex-direction: column;
-    text-align: center;
-  }
+        /* about content and wrapper nimo */
+  .about-content {
+      flex-direction: column;
+      padding: 2rem;
+  } 
   .about-content img {
-    padding: 0 20%;
+    padding:  0 4rem;
   }
-  .about-text h2 {
-    font-size: 1.5rem;
-  }
-  .about-text p {
-    padding: 0 20%;
-    font-size: 0.95rem;
+  .about-content p {
     text-align: justify;
   }
-
       /* PROJECTS SECTION */
   .projects {
     padding: 0 10%;
@@ -399,6 +391,7 @@ button {
 
    /* CONTACT SECTION */
    .contact-section form {
+    flex-direction: column;
     padding: 0 10%;
    }
 }
