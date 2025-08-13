@@ -42,6 +42,10 @@ button {
 
 
                     /* Navbar / Header Design */
+header {
+  position: fixed;
+  width: 100%;
+}
 .navbar{
     display: flex;
     padding: 30px;
@@ -184,20 +188,113 @@ button {
 }
 
         /*  Projects Section */
-
-
+.projects {
+  padding: 50px;
+}
+.projects .heading {
+  display: flex;
+  justify-content: center;
+  padding: 50px;
+  text-transform: uppercase;
+}
+.project-box {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  place-items: center;
+  gap: 3rem;
+  row-gap: 5rem;
+}
+.project-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: var();
+  border: 2px solid orange;
+  border-radius: 3rem;
+  gap: 2rem;
+  padding: 5rem 2rem;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 0 5px orange;
+  transition: 0.3 ease;
+}
+.project-card:hover {
+  box-shadow: 0 0 25px orange,
+              0 0 50px orange;
+  transform: scale(1.02);
+}
+.project-card img {
+  max-width: 300px;
+  border-radius: 2em;
+  object-fit: cover;
+}
+.project-card h3 {
+  font-size: 3rem;
+}
+.project-card p {
+  font-size: 1.6rem;
+}
 
 
         
         /* contact Section */
-.contact-section {
+.contact-section h2{
+  margin-bottom: 3rem;
+}
+.contact-section form {
   display: flex;
+  align-items: center;
   justify-content: center;
+  gap: 3rem;
+  margin: 5rem 0;
+  text-align: center;
+}
+.contact-section form .input-box input, 
+.contact-section form textarea{
+  width: 100%;
+  padding: 2.5rem;
+  font-size: 1.8rem;
+  color: var(--text-color);
+  background-color: var(--base-color);
+  border-radius: 2rem;
+  border: 2px solid var();
+  margin: 1.5rem 0;
+  resize: none;
 }
 
 
-
-
+        /* Footer Design */
+.footer {
+  background-color: var(--base-color);
+  padding: 50px 0;
+}
+.footer .social-list {
+  text-align: center;
+}
+.footer ul {
+  text-align: center;
+  font-size: 1.8rem;
+}
+.footer ul li {
+    display: inline-block;
+    margin-left: 20px;
+}
+.footer ul li a {
+    color: var(--text-color);
+    border-bottom: 3px solid transparent;
+    transition: 0.3 ease-in-out ;
+}
+.footer ul li a:hover {
+    border-bottom: 3px solid orange;
+}
+.footer .copyright{
+  color: var(--text-color);
+  text-align: center;
+  margin-top: 40px;
+  font-size: 16px;
+}
 
 
             /*RESPONSIVENESS*/
