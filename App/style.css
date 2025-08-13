@@ -329,13 +329,14 @@ button {
             /*RESPONSIVENESS*/
 
 
-@media screen and (max-width: 900px) {
+@media (max-width: 768px) {
   main {
-  padding: auto;
+    overflow-x: hidden;
   }
+  
       /* navbar responsiveness */
   .navbar {
-    display: flex;
+    position: absolute;
   }
   .navbar .nav-right .nav-menu{
     display: none;
@@ -359,8 +360,7 @@ button {
 
             /* hero section responsiveness */
    .hero-section {
-    flex-direction: column;
-    padding: 50px 5%;
+    flex-direction: column-reverse;
    }
    .hero-section .description {
     font-size: medium;
@@ -378,24 +378,27 @@ button {
         /* ABOUT SECTION RESPONSIVENESSS */
    .about-content {
     flex-direction: column;
-    padding: 10% 50%;
-    margin: 20% 10%;
-   }
-   .about-content {
-    display: flex;
-    padding: auto;
-   }
-   .about-content .about-text p{
+    text-align: center;
+  }
+  .about-content img {
+    padding: 0 20%;
+  }
+  .about-text h2 {
+    font-size: 1.5rem;
+  }
+  .about-text p {
+    padding: 0 20%;
+    font-size: 0.95rem;
     text-align: justify;
-    font-size: medium;
-   }
+  }
 
       /* PROJECTS SECTION */
-
+  .projects {
+    padding: 0 10%;
+  }
 
    /* CONTACT SECTION */
    .contact-section form {
-    flex-direction: column;
-    gap: .5rem;
+    padding: 0 10%;
    }
 }
