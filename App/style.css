@@ -3,7 +3,7 @@
 
 /* root color for light and dark mode */
 :root {
-    --base-color: white;
+    --base-color: rgba(255, 255, 255, 0.5);
     --base-variant: #d1d5e2;
     --text-color: #111528;
     --secondary-text: #232738;
@@ -11,12 +11,12 @@
     --accent-color: #0071ff;
 }
 .darkmode{
-    --base-color: #070b1d;
-    --base-variant: #616175;
-    --text-color: #ffffff;
-    --secondary-text: #a4a5b8;
-    --primary-color:  #868fa8;
-    --accent-color: #0071ff;
+    --base-color: rgba(10, 12, 20, 0.6); 
+    --base-variant: #1a1d29;
+    --text-color: #ffffff; 
+    --secondary-text: #b0b3c0;
+    --primary-color: #b8c2e0; 
+    --accent-color: #4dabff; 
 }
 
 * {
@@ -50,10 +50,12 @@ button {
     position: fixed;
     width: 100%;
     display: flex;
-    padding: 25px;
+    padding: 30px;
     justify-content: space-between;
     align-items: center;
-    background: var(--base-variant);
+    background: var(--base-color);
+    backdrop-filter: blur(10px);
+    z-index: 9999;
 }
 .navbar .nav-logo .logo-text {
     font-weight: 900;
@@ -115,22 +117,20 @@ button {
   align-items: center;
   text-align: center;
   justify-content: center;
-  padding: 5rem 2rem;
-  gap: 2rem;
-  margin: 35px 0;
+  padding: 8rem 2rem;
+  gap: 8rem;
 }
 .hero-text {
-    max-width: 500px;
-    text-align: left;
-    gap: 1.5rem;
-    color: var(--text-color);
+  text-align: left;
+  gap: 3rem;
+  color: var(--text-color);
 }
 .hero-text h1 {
   font-size: 2rem;
-  margin-bottom: 1rem;
+  margin: 10px 0;
+  color: #0071ff;
 }
 .hero-text p {
-  margin: 0.5rem 0 1rem;
   font-size: 25px;
 }
 .socials {
@@ -144,10 +144,14 @@ button {
 .stack-icons{
     display: flex;
     align-items: center;
-    margin-top: 50px;
+    margin-top: 30px;
+}
+.stack-icons h3 {
+  border-right: solid var(--text-color) 5px;
+  padding: 0 10px;
 }
 .stack-icons img{
-    width: 50px;
+    width: 60px;
     padding: 8px;
 }
 .profile-img {
@@ -169,11 +173,15 @@ button {
 
 
                             /* about section design */
+.about-section {
+  background-color: var(--base-color);
+}                            
 .about-content {
     display: flex;
-    padding: 5rem 12rem;
-    padding-top: 50px;
+    padding: 13rem 16rem;
+    scroll-padding-top: 80px;
     align-items: center;
+    justify-content: center;
     gap: 2rem;
     color: var(--text-color);
 }
@@ -253,7 +261,6 @@ button {
   color: var(--text-color);
   scroll-margin-top: 80px;
   padding: 0;
-  margin: 0;
 }
 .contact-section h2 {
   text-align: center;
@@ -265,7 +272,6 @@ button {
   justify-content: center;
   padding: 0 5px;
   gap: 2rem;
-  margin: 2rem 0;
   text-align: center;
 }
 .contact-section form .input-box input, 
@@ -326,8 +332,7 @@ button {
   main {
     overflow-x: hidden;
   }
-
-      /* navbar responsiveness */
+        /* navbar responsiveness */
   .navbar .nav-right .nav-menu{
     display: none;
   }
@@ -335,13 +340,12 @@ button {
     gap: 1.5rem;
     margin-right: 2px;
   }
-  .navbar .hamburger{
-    background: var(--base-variant);
+   #burger-menu {
+    background: none;
     display: block;
     border: none;
-    
-  }
-   .navbar .hamburger svg {
+   }
+   #burger-menu svg {
     fill: var(--text-color);
     background: none;
    }
@@ -351,8 +355,8 @@ button {
             /* hero section responsiveness */
    .hero-section {
     flex-direction: column-reverse;
-    margin: 5% 2%;
-    padding: 10% 5%;
+    padding: 7% 5%;
+    gap: 30%;
    }
    .hero-section .description {
     font-size: medium;
@@ -363,6 +367,9 @@ button {
    .stack-icons {
     margin-bottom: 0;
     align-items: center;
+   }
+   .stack-icons h3 {
+    font-size: medium;
    }
    .stack-icons img{
     width: 15%;
@@ -377,13 +384,21 @@ button {
   .about-content {
       flex-direction: column;
       padding: 2rem;
-  } 
+  }
+  .about-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
   .about-content img {
     padding:  0 4rem;
   }
   .about-content p {
     text-align: justify;
   }
+
+
       /* PROJECTS SECTION */
   .projects {
     padding: 0 10%;
@@ -394,4 +409,9 @@ button {
     flex-direction: column;
     padding: 0 10%;
    }
+
+  /* FOOTER RESPONSIVE */
+  .footer ul {
+    font-size: 1.2rem;
+  }
 }
