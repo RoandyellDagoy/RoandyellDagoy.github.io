@@ -1,3 +1,4 @@
+
 /* Importing Google fonts */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
@@ -10,13 +11,13 @@
     --primary-color: #868fa8;
     --accent-color: #0071ff;
 }
-.darkmode{
-    --base-color: rgba(10, 12, 20, 0.6); 
-    --base-variant: #1a1d29;
-    --text-color: #ffffff; 
-    --secondary-text: #b0b3c0;
-    --primary-color: #b8c2e0; 
-    --accent-color: #4dabff; 
+.darkmode {
+  --base-color: rgba(10, 12, 20, 0.9);
+  --base-variant: #1a1d29;
+  --text-color: #ffffff;
+  --secondary-text: #d1d5e2; 
+  --primary-color: #b8c2e0;
+  --accent-color: #4dabff;
 }
 
 * {
@@ -26,14 +27,13 @@
     font-family: "Roboto", sans-serif;
 }
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 body {
-    scroll-behavior: smooth;
     background-color: var(--base-color);
 }
 main {
-  padding: 50px 0 0;
+    padding: 50px 0 0;
 }
 a {
     text-decoration: none;
@@ -41,79 +41,79 @@ a {
 button {
     cursor: pointer;
 }
+section {
+  background-color: var(--base-color);
+}
 
 
 
 
                     /* Navbar / Header Design */
-.navbar{
-    position: fixed;
-    width: 100%;
-    display: flex;
-    padding: 30px;
-    justify-content: space-between;
-    align-items: center;
-    background: var(--base-color);
-    backdrop-filter: blur(10px);
-    z-index: 9999;
+.header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  padding: 2rem 5%;
+  background: var(--base-color);
+  backdrop-filter: blur(10px);
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  z-index: 9999;
 }
-.navbar .nav-logo .logo-text {
-    font-weight: 900;
-    color: var(--text-color);
+#menu-icon{
+  color: var(--text-color);
+  display: none;
 }
-.navbar .nav-right {
-    display: flex;
-    gap: 50px;
-    margin-right: 30px;
+.logo {
+  margin-right: auto;
+  font-size: 2rem;
+  color: var(--text-color);
+  font-weight: 800;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
 }
-.navbar .nav-menu{
-    display: flex;
-    gap: 1rem;
-    align-items: center;
+.logo:hover {
+  transform: scale(1.1);
 }
-.navbar .nav-menu .nav-list{
-    list-style: none;
-    color: black;
+.navbar a{
+  font-size: 1.2rem;
+  color: var(--text-color);
+  margin-left: 2rem;
+  font-weight: 400;
+  transition: 0.3s ease-in-out;
+  border-bottom: 2px solid transparent;
 }
-.navbar .nav-menu .nav-list .nav-link{
-    color: var(--text-color);
-    text-decoration: none;
-    font-weight: 600;
-    transition: color 0.2s ease;
+.navbar a:hover {
+  color: orange;
+  border-bottom: 2px solid var(--text-color);
 }
-.navbar .nav-menu .nav-list .nav-link:hover{
-    color: yellow;
-    text-decoration: none;
-}
-.navbar .theme-switch {
-  border: none;
+#theme-switch {
+  background-color: var(--base-color);
   background: none;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.navbar .theme-switch svg {
-  fill: var(--primary-color);
+#theme-switch svg {
+  fill: var(--text-color);
 }
-.navbar .theme-switch svg:last-child {
+#theme-switch svg:last-child {
   display: none;
 }
 .darkmode #theme-switch svg:first-child{
   display: none;
 }
-.darkmode #theme-switch svg:last-child {
+.darkmode #theme-switch svg:last-child{
   display: block;
 }
-.navbar .hamburger {
-  display: none;
-}
-
-
-    
-
 
                     /* hero section design */
 .hero-section {
   display: flex;
   scroll-margin-top: 80px;
-  background: var(--base-color);
   align-items: center;
   text-align: center;
   justify-content: center;
@@ -172,10 +172,7 @@ button {
 
 
 
-                            /* about section design */
-.about-section {
-  background-color: var(--base-color);
-}                            
+                            /* about section design */                          
 .about-content {
     display: flex;
     padding: 13rem 16rem;
@@ -204,7 +201,6 @@ button {
         /*  Projects Section */
 .projects {
   padding: 50px;
-  background-color: var(--base-color);
   color: var(--text-color);
 }
 .projects .heading {
@@ -257,7 +253,6 @@ button {
         
         /* contact Section */
 .contact-section {
-  background-color: var(--base-color);
   color: var(--text-color);
   scroll-margin-top: 80px;
   padding: 0;
@@ -328,27 +323,63 @@ button {
             /*RESPONSIVENESS*/
 
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   main {
-    overflow-x: hidden;
+    overflow: hidden;
   }
-        /* navbar responsiveness */
-  .navbar .nav-right .nav-menu{
-    display: none;
+  .header {
+    display: flex;
+    align-items: center;
   }
-  .navbar .nav-right {
-    gap: 1.5rem;
-    margin-right: 2px;
-  }
-   #burger-menu {
-    background: none;
+  #menu-icon {
     display: block;
-    border: none;
-   }
-   #burger-menu svg {
-    fill: var(--text-color);
+    background-color: var(--base-color);
     background: none;
-   }
+    border: none;
+    cursor: pointer;
+  }
+  #menu-icon svg {
+    fill: var(--text-color);
+    font-size: 0.5rem;
+  }
+  
+  .header-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+  .header-right button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 0; /* keeps icons aligned */
+    padding: 0;     /* prevents extra button padding */
+    border: none;
+    background: none;
+}
+  .navbar {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    display: none ;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem 3rem;
+    background: var(--base-color);
+    border-bottom-left-radius: 1rem;
+    border-left: 2px solid var(--base-variant);
+    border-bottom: 2px solid var(--base-variant);
+    z-index: 1000;
+  }
+  .navbar a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1rem;
+  }
+  .navbar.show {
+    display: flex;
+  }
 
 
 
@@ -415,3 +446,4 @@ button {
     font-size: 1.2rem;
   }
 }
+
