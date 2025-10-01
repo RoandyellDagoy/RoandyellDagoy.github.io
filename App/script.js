@@ -5,9 +5,9 @@
       localStorage.setItem("theme", document.documentElement.classList.contains("dark") ? "dark" : "light");
     });
     if (localStorage.getItem("theme") === "dark") {
-        document.documentElement.classList.add("dark"); // ✅ fix here
+        document.documentElement.classList.add("dark"); 
     } else {
-        document.documentElement.classList.remove("dark"); // optional: ensure light mode default
+        document.documentElement.classList.remove("dark"); 
     }
     
 
@@ -29,7 +29,7 @@
 
   // email js auto reply
  (function () {
-    emailjs.init("kkv7mKUnTyZCdiQoY"); // 🔑 Replace with your EmailJS Public Key
+    emailjs.init("kkv7mKUnTyZCdiQoY"); 
   })();
 
   const form = document.getElementById("contact-form");
