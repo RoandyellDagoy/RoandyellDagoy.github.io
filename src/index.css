@@ -1,0 +1,36 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+@theme {
+  --color-base: var(--base-color);
+  --color-baseVariant: var(--base-variant);
+  --color-text: var(--text-color);
+  --color-textSecondary: var(--secondary-text);
+  --color-primary: var(--primary-color);
+  --color-accent: var(--accent-color);
+  --font-sans: "Roboto", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+  /* equal to navbar height */
+}
+
+:root {
+  --base-color: rgba(255, 255, 255, 0.9);
+  --base-variant: #d1d5e2;
+  --text-color: #111528;
+  --secondary-text: #232738;
+  --primary-color: #868fa8;
+  --accent-color: #0052cc;
+}
+
+.dark {
+  --base-color: rgba(10, 12, 20, 0.95);
+  --base-variant: #1a1d29;
+  --text-color: #ffffff;
+  --secondary-text: #d1d5e2;
+  --primary-color: #b8c2e0;
+  --accent-color: #4dabff;
+}
