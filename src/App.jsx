@@ -12,7 +12,7 @@ function App() {
 
   // Initialize EmailJS
   useEffect(() => {
-    emailjs.init('kkv7mKUnTyZCdiQoY');
+    emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
   }, []);
 
   // Sync theme to root element
@@ -33,7 +33,11 @@ function App() {
   const handleFormSubmit = (e) => {
     e.preventDefault();
 
-    emailjs.sendForm('service_2dcv7sj', 'template_lli15wk', formRef.current)
+    emailjs.sendForm(
+      import.meta.env.VITE_EMAILJS_SERVICE_ID,
+      import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+      formRef.current
+    )
       .then(() => {
         setStatusMessage('✅ Message sent successfully!');
         setStatusColor('text-green-600');
