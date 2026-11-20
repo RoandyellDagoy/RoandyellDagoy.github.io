@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import emailjs from '@emailjs/browser';
+import { content } from '../data/content';
 
 export function useContactForm() {
   const [statusMessage, setStatusMessage] = useState('');
@@ -23,27 +24,17 @@ export function useContactForm() {
         formRef.current
       )
       .then(() => {
-        setStatusMessage('✅ Message sent successfully!');
-        setStatusColor('text-green-600');
-        if (formRef.current) {
-          formRef.current.reset();
-        }
+        setStatusMessage(content.contact.success);
+        setStatusColor('text-accent');
+        formRef.current?.reset();
       })
       .catch((err) => {
-        setStatusMessage('❌ Failed to send message. Try again.');
-        setStatusColor('text-red-600');
+        setStatusMessage(content.contact.error);
+        setStatusColor('text-red-700 dark:text-red-400');
         console.error('EmailJS Error:', err);
       })
-      .finally(() => {
-        setIsSubmitting(false);
-      });
+      .finally(() => setIsSubmitting(false));
   };
 
-  return {
-    formRef,
-    statusMessage,
-    statusColor,
-    isSubmitting,
-    handleFormSubmit,
-  };
+  return { formRef, statusMessage, statusColor, isSubmitting, handleFormSubmit };
 }

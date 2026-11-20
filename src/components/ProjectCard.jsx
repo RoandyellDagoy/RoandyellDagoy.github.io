@@ -1,37 +1,41 @@
-import React from 'react';
+﻿import React from 'react';
 
-function ProjectCard({ image, alt, title, description, link }) {
-  const isExternal = link && (link.startsWith('http://') || link.startsWith('https://'));
+function ProjectCard({ image, alt, title, codename, description, stack = [], link }) {
+  const hasLink = link && link !== '#';
+  const isExternal = hasLink && /^https?:\/\//.test(link);
 
   return (
-    <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden transform transition duration-300 hover:-translate-y-2 hover:shadow-2xl flex flex-col justify-between">
-      <div>
-        <img
-          src={image}
-          alt={alt || title}
-          className="w-full h-48 object-cover"
-        />
-        <div className="p-6">
-          <h3 className="text-xl font-semibold mb-2 text-text dark:text-white">
-            {title}
-          </h3>
-          <p className="text-gray-600 dark:text-gray-300 mb-4 text-sm leading-relaxed">
-            {description}
-          </p>
-        </div>
+    <article className="clay clay-hover p-4 flex flex-col">
+      <img
+        src={image}
+        alt={alt || title}
+        className="w-full h-44 object-cover rounded-lg mb-5"
+      />
+      <div className="px-2 flex-1">
+        <p className="text-xs uppercase tracking-[0.2em] text-gold mb-1">{codename}</p>
+        <h3 className="font-display text-xl font-bold mb-2">{title}</h3>
+        <p className="text-sm text-textSecondary leading-relaxed mb-4">{description}</p>
+        <ul className="flex flex-wrap gap-2 mb-5">
+          {stack.map((s) => (
+            <li key={s} className="clay-inset px-3 py-1 text-xs">
+              {s}
+            </li>
+          ))}
+        </ul>
       </div>
-      <div className="px-6 pb-6">
+      {hasLink && (
         <a
-          href={link || '#'}
+          href={link}
           target={isExternal ? '_blank' : undefined}
           rel={isExternal ? 'noopener noreferrer' : undefined}
-          className="inline-block px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
+          className="clay-gold px-5 py-2 text-sm font-semibold self-start mx-2 mb-2"
         >
           View project
         </a>
-      </div>
-    </div>
+      )}
+    </article>
   );
 }
 
 export default ProjectCard;
+

@@ -1,50 +1,34 @@
 import React from 'react';
 import { useContactForm } from '../hooks/useContactForm';
+import { content } from '../data/content';
+
+const field = 'clay-inset p-4 text-text placeholder:text-textSecondary w-full';
 
 function Contact() {
   const { formRef, statusMessage, statusColor, isSubmitting, handleFormSubmit } = useContactForm();
+  const { contact } = content;
 
   return (
-    <section id="contact" className="py-20 px-6 max-w-4xl mx-auto text-center">
-      <h2 className="text-3xl font-bold mb-6">Get In Touch</h2>
-      <p className="text-textSecondary mb-8">
-        Have a project in mind or just want to connect? Let’s talk!
-      </p>
+    <section id="contact" className="py-20 px-6 max-w-3xl mx-auto text-center">
+      <h2 className="font-display text-3xl font-bold mb-2">{contact.title}</h2>
+      <div className="gold-line mx-auto mb-6" />
+      <p className="text-textSecondary mb-8">{contact.intro}</p>
 
-      <form ref={formRef} onSubmit={handleFormSubmit} id="contact-form" className="flex flex-col gap-4">
-        <input
-          type="text"
-          name="user_name"
-          placeholder="Your Name"
-          className="p-3 rounded-lg border border-baseVariant bg-base text-text"
-          required
-        />
-        <input
-          type="email"
-          name="user_email"
-          placeholder="Your Email"
-          className="p-3 rounded-lg border border-baseVariant bg-base text-text"
-          required
-        />
-        <textarea
-          name="message"
-          placeholder="Your Message"
-          rows="5"
-          className="p-3 rounded-lg border border-baseVariant bg-base text-text"
-          required
-        ></textarea>
-
+      <form ref={formRef} onSubmit={handleFormSubmit} className="clay p-8 flex flex-col gap-4 text-left">
+        <input type="text" name="user_name" placeholder="Your Name" className={field} required />
+        <input type="email" name="user_email" placeholder="Your Email" className={field} required />
+        <textarea name="message" placeholder="Your Message" rows="5" className={field} required />
         <button
           type="submit"
           disabled={isSubmitting}
-          className="px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow hover:bg-blue-700 hover:scale-105 transition cursor-pointer disabled:opacity-50"
+          className="clay-gold px-8 py-3 font-semibold self-center cursor-pointer disabled:opacity-50"
         >
-          {isSubmitting ? 'Sending...' : 'Send Message'}
+          {isSubmitting ? contact.sending : contact.send}
         </button>
       </form>
 
       {statusMessage && (
-        <p id="form-status" className={`mt-4 font-semibold ${statusColor}`}>
+        <p role="status" className={`mt-4 font-semibold ${statusColor}`}>
           {statusMessage}
         </p>
       )}
